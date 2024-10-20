@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>CSS3 Selector Basic</title>
+    <style>
+        /* #header의 h1 스타일 */
+        #header h1 { color: red; }
+        
+        /* #section의 h1 스타일 */
+        #section h1 { color: orange; }
+        
+        /* #nav 아래 h1에는 스타일 적용 안되게 설정 */
+        #nav h1 { color: initial; }
+    </style>
+</head>
+
+<body>
+
+<div id="header">
+    <h1 class="title">Lorem ipsum</h1>
+    <div id="nav">
+        <h1>Navigation</h1> <!-- 이 부분은 스타일이 적용되지 않음 -->
+    </div>
+</div>
+
+<div id="section">
+    <h1 class="title">Lorem ipsum</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+
+</body>
+
+</html>
