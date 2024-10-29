@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Font Property</title> <!-- 문서의 제목을 설정합니다. 브라우저 탭에 표시됩니다. -->
+    <style>
+        .font_big { font-size: 2em; } /* .font_big 클래스를 정의하여 글자 크기를 2배로 설정합니다. */
+        .font_italic { font-style: italic; } /* .font_italic 클래스를 정의하여 글자를 이탤릭체로 설정합니다. */
+        .font_bold { font-weight: bold; } /* .font_bold 클래스를 정의하여 글자를 굵게 설정합니다. */
+        .font_center { text-align: center; } /* .font_center 클래스를 정의하여 텍스트를 중앙 정렬합니다. */
+
+        .button {
+            width: 150px; /* 버튼의 너비를 150픽셀로 설정합니다. */
+            height: 70px; /* 버튼의 높이를 70픽셀로 설정합니다. */
+            background-color: #FF6A00; /* 버튼의 배경색을 주황색으로 설정합니다. */
+            border: 10px solid #FFFFFF; /* 버튼의 테두리를 흰색으로 설정하고 두께를 10픽셀로 설정합니다. */
+            border-radius: 30px; /* 버튼의 모서리를 둥글게 설정합니다. */
+            box-shadow: 5px 5px 5px #A9A9A9; /* 버튼에 그림자 효과를 추가합니다. */
+        }
+
+        .button > a {
+            display: block; /* 링크를 블록 요소로 설정하여 버튼 전체를 클릭할 수 있도록 합니다. */
+            line-height: 70px; /* 링크의 줄 높이를 버튼의 높이와 동일하게 설정하여 텍스트를 수직 중앙 정렬합니다. */
+        }
+    </style>
+</head>
+<body>
+    <div class="button"> <!-- 버튼을 감싸는 div 요소입니다. -->
+        <a href="#" class="font_big font_italic font_bold font_center">Click</a> <!-- 스타일이 적용된 클릭할 수 있는 링크입니다. -->
+    </div>
+</body>
+</html>
