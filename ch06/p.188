@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Font Property</title> <!-- 문서의 제목을 설정합니다. 브라우저 탭에 표시됩니다. -->
+    <style>
+        .font_big { font-size: 2em; } /* .font_big 클래스를 정의하여 글자 크기를 2배로 설정합니다. */
+        .font_italic { font-style: italic; } /* .font_italic 클래스를 정의하여 글자를 이탤릭체로 설정합니다. */
+        .font_bold { font-weight: bold; } /* .font_bold 클래스를 정의하여 글자를 굵게 설정합니다. */
+    </style>
+</head>
+<body>
+    <p class="font_big font_italic font_bold">Lorem ipsum dolor amet</p> <!-- 위에서 정의한 클래스를 사용하여 글자 크기, 스타일, 두께를 적용한 단락입니다. -->
+</body>
+</html>
