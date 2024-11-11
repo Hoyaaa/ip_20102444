@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Layout</title>
+<style>
+  /* Basic reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container styling */
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Header for contact information */
+  .header {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Message display area */
+  .message-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+
+  .message {
+    background-color: #e9e9e9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 80%;
+  }
+
+  /* Input area styling */
+  .input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+
+  .input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+
+  .input-area button {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  /* Landscape view: show message list on the left */
+  @media (orientation: landscape) {
+    .container {
+      flex-direction: row;
+    }
+
+    .message-list {
+      width: 30%;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+    }
+
+    .message-list-item {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    .message-list-item.active {
+      background-color: #e0e0e0;
+    }
+
+    .message-display {
+      width: 70%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Message List for landscape mode -->
+  <div class="message-list">
+    <div class="message-list-item active">1588-1300</div>
+    <div class="message-list-item">1899-4134</div>
+    <div class="message-list-item">02-2033-8500</div>
+    <div class="message-list-item">1588-0365</div>
+    <div class="message-list-item">02-766-1004</div>
+  </div>
+
+  <!-- Main content area with header, message display, and input -->
+  <div class="main-content">
+    <div class="header">1588-1300</div>
+    <div class="message-display">
+      <div class="message">[Web발신] 중량은 5100g이며, 요금은 45750원이 결제되었습니다.</div>
+    </div>
+    <div class="input-area">
+      <input type="text" placeholder="메시지 입력">
+      <button>Send</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
