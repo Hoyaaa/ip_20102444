@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 문서의 제목을 설정합니다. 브라우저의 탭에 표시됩니다. -->
+    <title>HTML5 Basic Page</title>
+
+    <!-- 1. 초기화 (모든 요소의 기본 스타일 초기화) -->
+    <style>
+        /* *은 모든 요소를 선택하여 margin과 padding을 0으로 초기화 */
+        * {
+            margin: 0; padding: 0;
+            font-family: '맑은 고딕', 'Malgun Gothic', Gothic, sans-serif; /* 기본 글꼴 설정 */
+        }
+        a { text-decoration: none; } /* 링크에 기본적으로 적용된 밑줄 제거 */
+        li { list-style: none; } /* 리스트 항목의 기본 스타일 제거 */
+    </style>
+
+    <!-- 기본 클래스 (레이아웃을 위한 클래스 정의) -->
+    <style>
+        /* float 속성을 이용하여 요소를 왼쪽 또는 오른쪽으로 띄웁니다. */
+        .pull-left { float: left; }
+        .pull-right { float: right; }
+    </style>
+
+    <!-- 2. 페이지 구성 (전체 페이지의 레이아웃 설정) -->
+    <style>
+        body {
+            width: 960px; margin: 0 auto; /* 페이지 너비를 960px로 설정하고 중앙 정렬 */
+            background: #E6E6E6; /* 페이지 배경색 */
+        }
+        #page-wrapper {
+            background: white; /* 페이지의 메인 내용 영역 배경색 */
+            margin: 40px 0; padding: 10px 20px; /* 상하 여백 40px, 좌우 여백 20px */
+            border-radius: 5px; /* 모서리를 둥글게 */
+            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3); /* 그림자 효과 */
+        }
+    </style>
+
+    <!-- 3. 헤더 구성 (페이지 상단 헤더 스타일링) -->
+    <style>
+        #main-header { padding: 40px 50px; } /* 헤더 영역의 상하 좌우 여백 설정 */
+        .master-title {
+            font-size: 30px; /* 제목 글자 크기 설정 */
+            color: #181818; /* 제목 글자 색 */
+        }
+        .master-description {
+            font-size: 15px; font-weight: 500; /* 설명 글자 크기 및 두께 설정 */
+            color: #383838; /* 설명 글자 색 */
+        }
+    </style>
+
+    <!-- 4. 내비게이션 및 풀다운 메뉴 구성 -->
+    <style>
+        #main-navigation {
+            border-top: 1px solid #C8C8C8; /* 상단 구분선 */
+            border-bottom: 1px solid #C8C8C8; /* 하단 구분선 */
+            margin-bottom: 20px; /* 하단 여백 */
+            height: 40px; /* 내비게이션 바 높이 설정 */
+        }
+
+        .outer-menu-item {
+            float: left; /* 왼쪽으로 요소 정렬 */
+            position: relative; /* 풀다운 메뉴를 상대적으로 배치하기 위해 필요 */
+        }
+        .outer-menu-item:hover {
+            background: black; /* 마우스 hover 시 배경색 */
+            color: white; /* 텍스트 색 변경 */
+        }
+
+        .menu-title {
+            display: block; /* 메뉴 제목을 블록 요소로 */
+            height: 30px; line-height: 30px; /* 제목의 높이와 텍스트 수직 정렬 */
+            text-align: center; /* 텍스트 가운데 정렬 */
+            padding: 5px 20px; /* 상하좌우 여백 */
+        }
+
+        .inner-menu {
+            display: none; /* 기본적으로 숨김 처리 */
+            position: absolute; /* 풀다운 메뉴를 부모 요소에서 벗어나도록 설정 */
+            top: 40px; left: 0; /* 내비게이션 바 바로 아래에 메뉴가 나타나도록 설정 */
+            width: 100%; /* 메뉴의 너비를 부모 요소와 같게 설정 */
+            background: white; /* 메뉴 배경색 */
+            box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9); /* 메뉴에 그림자 효과 */
+            z-index: 1000; /* 다른 요소들 위에 메뉴가 표시되도록 설정 */
+            text-align: center; /* 메뉴 아이템 텍스트 가운데 정렬 */
+        }
+        .inner-menu-item > a {
+            display: block; /* 메뉴 아이템을 블록 요소로 설정 */
+            padding: 5px 10px; /* 메뉴 아이템에 여백 */
+            color: black; /* 텍스트 색 */
+        }
+        .inner-menu-item > a:hover {
+            background: black; /* hover 시 배경 색상 변경 */
+            color: white; /* hover 시 텍스트 색상 변경 */
+        }
+    </style>
+
+    <!-- 5. 검색 양식 추가 (내비게이션 내 검색 창 스타일) -->
+    <style>
+        .search-bar {
+            height: 26px; /* 검색 바 높이 설정 */
+            padding: 7px; /* 검색 바 내부 여백 */
+        }
+
+        .input-search {
+            display: block; /* 검색 입력창을 블록으로 설정 */
+            float: left; /* 왼쪽으로 정렬 */
+            background-color: #FFFFFF; /* 입력창 배경색 */
+            border: 1px solid #CCCCCC; /* 입력창 테두리 색 */
+            border-radius: 15px 0 0 15px; /* 둥근 테두리 */
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); /* 내부 그림자 */
+            width: 120px; height: 24px; /* 크기 설정 */
+            padding: 0 0 0 10px; /* 여백 설정 */
+            font-size: 12px; /* 글자 크기 설정 */
+            color: #555555; /* 글자 색 */
+        }
+        .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8); /* 포커스 시 테두리 색상 */
+            outline: 0; /* 포커스 아웃라인 제거 */
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); /* 내부 그림자 유지 */
+        }
+
+        .input-search-submit {
+            display: block; /* 검색 버튼을 블록으로 설정 */
+            float: left; /* 왼쪽으로 정렬 */
+            width: 50px; height: 26px; /* 버튼 크기 설정 */
+            border-radius: 0 15px 15px 0; /* 둥근 테두리 */
+            border: 1px solid #CCCCCC; /* 버튼 테두리 색 */
+            margin-left: -1px; /* 입력창과 버튼의 간격을 좁히기 위해 여백 설정 */
+            vertical-align: top; /* 버튼의 수직 정렬 설정 */
+        }
+    </style>
+
+    <!-- 6. 본문 추가 (중앙 내용 영역) -->
+    <style>
+        /* 본문 섹션을 중앙으로 정렬 */
+        #content { overflow: hidden; }
+
+        /* 주요 콘텐츠 영역 설정 */
+        #main-section {
+            float: left; /* 왼쪽에 콘텐츠를 배치 */
+            width: 710px; /* 너비 설정 */
+        }
+
+        /* 사이드바 영역 설정 */
+        #main-aside {
+            float: right; /* 오른쪽에 사이드바 배치 */
+            width: 200px; /* 너비 설정 */
+        }
+    </style>
+
+    <!-- 6. 본문 추가 (본문 포스트 위쪽) -->
+    <style>
+        article {
+            padding: 0 10px 20px 10px; /* 아티클 영역 내 여백 설정 */
+            border-bottom: 1px solid #C8C8C8; /* 하단 구분선 추가 */
+        }
+
+        .article-header { padding: 20px 0; } /* 제목과 날짜를 위한 여백 설정 */
+        .article-title {
+            font-size: 25px; /* 제목 글자 크기 설정 */
+            font-weight: 500; /* 제목 두께 설정 */
+            padding-bottom: 10px; /* 제목과 본문 사이 여백 설정 */
+        }
+        .article-date { font-size: 13px; } /* 날짜 글자 크기 설정 */
+        .article-body {
+            font-size: 14px; /* 본문 글자 크기 설정 */
+        }
+    </style>
+
+    <!-- 6. 본문 추가 (사이드 메뉴) -->
+    <style>
+        .aside-list { padding: 10px 0 30px 0; } /* 사이드 메뉴 항목에 여백 설정 */
+        .aside-list > h3 {
+            font-size: 15px; /* 카테고리 제목 글자 크기 설정 */
+            font-weight: 600; /* 카테고리 제목 두께 설정 */
+        }
+        .aside-list li a {
+            margin-left: 8px; /* 링크의 왼쪽 여백 설정 */
+        }
+        .aside-list li a {
+            font-size: 13px; /* 링크 글자 크기 설정 */
+            color: #6C6C6C; /* 링크 텍스트 색상 설정 */
+        }
+        .aside-list li a:hover {
+            color: #000000; /* 링크 hover 시 텍스트 색상 변경 */
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 페이지의 전체 컨텐츠를 감싸는 div -->
+    <div id="page-wrapper">
+        
+        <!-- 페이지 상단 헤더 영역 -->
+        <header id="main-header">
+            <hgroup>
+                <!-- 메인 제목 (HTML5 Example Preview) -->
+                <h1 class="master-title">HTML5 Example Preview</h1>
+                <!-- 부제목 (한빛아카데미) -->
+                <h2 class="master-description">한빛아카데미</h2>
+            </hgroup>
+        </header>
+
+        <!-- 내비게이션 영역 (메뉴 및 검색창) -->
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <!-- 메뉴 항목 목록 -->
+                <ul class="outer-menu">
+                    <!-- HTML5 메뉴 항목 -->
+                    <li class="outer-menu-item">
+                        <span class="menu-title">HTML5</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                    <!-- CSS3 메뉴 항목 -->
+                    <li class="outer-menu-item">
+                        <span class="menu-title">CSS3</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                    <!-- JavaScript 메뉴 항목 -->
+                    <li class="outer-menu-item">
+                        <span class="menu-title">JavaScript</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <!-- 검색 영역 -->
+                <div class="search-bar">
+                    <form>
+                        <!-- 검색 입력창 -->
+                        <input type="text" class="input-search">
+                        <!-- 검색 버튼 -->
+                        <input type="submit" class="input-search-submit" value="검색">
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 페이지 내용 영역 -->
+        <div id="content">
+            <!-- 주요 콘텐츠 섹션 -->
+            <section id="main-section">
+                <!-- 첫 번째 아티클 (본문) -->
+                <article>
+                    <div class="article-header">
+                        <!-- 아티클 제목 -->
+                        <h1 class="article-title">HTML5 개요와 활용</h1>
+                        <!-- 아티클 작성 날짜 -->
+                        <p class="article-date">2023년 05월 22일</p>
+                    </div>
+                    <div class="article-body">
+                        <!-- 아티클 내용에 포함된 이미지 -->
+                        <img src="http://placeholder.com/430x280" alt="placeholder">
+                        <br><br>
+                        <!-- 아티클 내용 (본문) -->
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac mauris at risus consequat accumsan sit amet id leo. Fusce vestibulum erat vel consectetur aliquam. Integer a velit neque. Morbi at nibh a justo fringilla lobortis. Morbi vulputate nibh sem, ut volutpat ante placerat a. In arcu mi, ullamcorper ut est sit amet, ultrices consectetur dui. Sed a ullamcorper mi, quis pellentesque eros. Donec sit amet purus ac orci elementum maximus. Curabitur est nisl, blandit ut lectus non, placerat aliquet nunc.</p>
+                        <br>
+                        <p>Aenean ut bibendum augue. Cras id suscipit orci. Duis ex leo, placerat eu luctus id, porttitor et urna. Nullam pretium faucibus magna vel fermentum. Cras posuere ultrices ante in dapibus. Nulla ullamcorper nulla at elit fermentum, nec varius sem facilisis. Quisque sed arcu ipsum. Mauris ornare sodales tortor congue pretium. Vestibulum vestibulum purus ex, vitae maximus nibh imperdiet eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
+                    </div>
+                </article>
+
+                <!-- 두 번째 아티클 (본문) -->
+                <article>
+                    <div class="article-header">
+                        <!-- 아티클 제목 -->
+                        <h1 class="article-title">HTML5 응용과 실습</h1>
+                        <!-- 아티클 작성 날짜 -->
+                        <p class="article-date">2023년 05월 24일</p>
+                    </div>
+                    <div class="article-body">
+                        <!-- 아티클 내용에 포함된 이미지 -->
+                        <img src="http://placeholder.com/430x280" alt="placeholder">
+                        <br><br>
+                        <!-- 아티클 내용 (본문) -->
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac mauris at risus consequat accumsan sit amet id leo. Fusce vestibulum erat vel consectetur aliquam. Integer a velit neque. Morbi at nibh a justo fringilla lobortis. Morbi vulputate nibh sem, ut volutpat ante placerat a. In arcu mi, ullamcorper ut est sit amet, ultrices consectetur dui. Sed a ullamcorper mi, quis pellentesque eros. Donec sit amet purus ac orci elementum maximus. Curabitur est nisl, blandit ut lectus non, placerat aliquet nunc.</p>
+                        <br>
+                        <p>Aenean ut bibendum augue. Cras id suscipit orci. Duis ex leo, placerat eu luctus id, porttitor et urna. Nullam pretium faucibus magna vel fermentum. Cras posuere ultrices ante in dapibus. Nulla ullamcorper nulla at elit fermentum, nec varius sem facilisis. Quisque sed arcu ipsum. Mauris ornare sodales tortor congue pretium. Vestibulum vestibulum purus ex, vitae maximus nibh imperdiet eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 사이드바 섹션 -->
+            <aside id="main-aside">
+                <!-- 카테고리 목록 -->
+                <div class="aside-list">
+                    <h3>카테고리</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+                <!-- 최근 글 목록 -->
+                <div class="aside-list">
+                    <h3>최근 글</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 페이지 하단 푸터 -->
+        <footer id="main-footer">
+            <!-- 푸터 링크 (저작권 표시 등) -->
+            <a href="#">ITCookBook HTML5 Programming</a>
+        </footer>
+    </div>
+</body>
+</html>
