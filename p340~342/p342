@@ -1,0 +1,65 @@
+19번 문제: 사용자의 연도를 입력받아 해당 띠 출력 프로그램 작성
+
+let year = parseInt(prompt("태어난 연도를 입력하세요:", "2000"));
+
+// 12간지 배열
+const zodiac = [
+    "원숭이", "닭", "개", "돼지", "쥐", "소", "호랑이", "토끼",
+    "용", "뱀", "말", "양"
+];
+
+// 나머지 연산으로 띠 계산
+let zodiacIndex = year % 12;
+let zodiacAnimal = zodiac[zodiacIndex];
+
+// 결과 출력
+alert(`${year}년에 태어난 사람의 띠는 '${zodiacAnimal}'입니다.`);
+
+
+20번 문제: 반복문을 사용해 주어진 패턴 출력
+
+let pattern = "";
+
+// 1부터 8까지 반복
+for (let i = 1; i <= 8; i++) {
+    pattern += "*".repeat(i) + "\n"; // i만큼 '*' 추가 후 줄바꿈
+}
+
+// 출력
+console.log(pattern);
+
+
+21번 문제: n 팩토리얼을 계산하는 함수 작성
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1; // 0!과 1!은 1로 정의
+    }
+
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i; // n부터 1까지 곱함
+    }
+    return result;
+}
+
+// 사용 예시
+let input = parseInt(prompt("팩토리얼을 계산할 숫자를 입력하세요:", "5"));
+alert(`${input}! = ${factorial(input)}`);
+
+
+22번 문제: 주어진 속성을 가진 객체 생성
+
+let book = {
+    이름: "C# 프로그래밍(2판)",
+    초판발행: "2021년 1월 5일",
+    지은이: "윤인성",
+    펴낸이: "전태준",
+    펴낸곳: "한빛미디어(주)",
+    책임편집: "김수영",
+    기획: "김수영",
+    편집: "정세린",
+    디자인: "허선희, 이아란"
+};
+
+// 출력 예시
+console.log(book);
