@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 친화적 뷰포트 설정 -->
+    <title>Enhanced Layout</title> <!-- 페이지 제목 -->
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            margin: 0; /* 기본 여백 제거 */
+            font-family: Arial, sans-serif; /* 폰트 설정 */
+            line-height: 1.6; /* 텍스트 줄 간격 설정 */
+        }
+
+        /* 전체 레이아웃 설정 */
+        .container {
+            display: flex; /* 플렉스 박스를 사용하여 수평 정렬 */
+            gap: 16px; /* 왼쪽과 오른쪽 간격 설정 */
+            padding: 16px; /* 페이지 내부 여백 */
+        }
+
+        /* 왼쪽 섹션 스타일 */
+        .left {
+            flex: 3; /* 비율 설정 (3:2 비율) */
+            background-color: #f0f8ff; /* 밝은 배경색 */
+            padding: 16px; /* 내부 여백 */
+            border-radius: 8px; /* 모서리를 둥글게 설정 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+        }
+
+        /* 오른쪽 섹션 스타일 */
+        .right {
+            flex: 2; /* 비율 설정 (3:2 비율) */
+            background-color: #ffe4e1; /* 밝은 배경색 */
+            padding: 16px; /* 내부 여백 */
+            border-radius: 8px; /* 모서리를 둥글게 설정 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+        }
+
+        /* 리스트 스타일 */
+        .left ul {
+            padding-left: 20px; /* 리스트 안쪽 여백 */
+            list-style-type: disc; /* 디스크 스타일 리스트 아이콘 */
+        }
+
+        /* 오른쪽 텍스트 스타일 */
+        .right p {
+            margin: 8px 0; /* 위아래 여백 */
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            text-align: center; /* 가운데 정렬 */
+            padding: 16px; /* 내부 여백 */
+            background-color: #f1f1f1; /* 밝은 배경색 */
+            margin-top: 16px; /* 상단 여백 */
+            font-size: 14px; /* 작은 글씨 크기 */
+            color: #555; /* 어두운 텍스트 색상 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 메인 컨테이너 -->
+    <div class="container">
+        <!-- 왼쪽 섹션 -->
+        <div class="left">
+            <div class="content">
+                <h1>List</h1> <!-- 제목 -->
+                <ul>
+                    <li>Velit ipsum ullamco</li>
+                    <li>Nulla qui officia anim</li>
+                    <li>Quis proident tempor ipsum</li>
+                    <li>Et sunt sit culpa ad</li>
+                    <li>Fugiat reprehenderit sint mollit</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 오른쪽 섹션 -->
+        <div class="right">
+            <div class="content">
+                <h1>Lorem ipsum</h1> <!-- 제목 -->
+                <p>Sunt nostrud consequat</p>
+                <p>Aute do et ullamco</p>
+                <p>Deserunt irure Lorem</p>
+                <p>Velit ipsum ullamco et</p>
+                <img src="https://via.placeholder.com/150" alt="Sample Image" style="width:100%; border-radius: 8px;"> <!-- 샘플 이미지 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+        © 2024 Enhanced Layout. All rights reserved. <!-- 푸터 텍스트 -->
+    </footer>
+</body>
+</html>
