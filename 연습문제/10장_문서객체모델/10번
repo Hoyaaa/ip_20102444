@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Selector</title> <!-- 웹페이지의 제목을 설정. 브라우저 탭에 표시됨. -->
+</head>
+<body>
+    <!-- h1 요소로 구성된 헤더들 -->
+    <h1>Header - 1</h1> <!-- 첫 번째 h1 요소 -->
+    <h1>Header - 2</h1> <!-- 두 번째 h1 요소 -->
+    <h1>Header - 3</h1> <!-- 세 번째 h1 요소 -->
+    <script>
+        // DOMContentLoaded 이벤트 리스너 추가
+        // DOMContentLoaded는 문서의 HTML 구조가 완전히 로드된 후 발생
+        document.addEventListener("DOMContentLoaded", () => {
+            // querySelectorAll을 사용하여 문서 내 모든 h1 요소를 선택
+            // 결과는 NodeList 형태로 반환됨 (배열과 유사)
+            let headers = document.querySelectorAll('h1');
+            
+            // forEach 메서드를 사용하여 NodeList에 포함된 각 h1 요소를 순회
+            headers.forEach(header => {
+                // 각 h1 요소의 텍스트 색상을 흰색으로 설정
+                header.style.color = 'white';
+                
+                // 각 h1 요소의 배경 색상을 검은색으로 설정
+                header.style.backgroundColor = 'black';
+            });
+        });
+    </script>
+</body>
+</html>
