@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 공통 스타일 */
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 8px;
+        }
+
+        .gnb-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+        }
+
+        .gnb {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .gnb li {
+            padding: 0 16px;
+            font-size: 14px;
+        }
+
+        .gnb li:first-child {
+            padding-left: 0;
+        }
+
+        .rank {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .content-group {
+            margin-top: 16px;
+        }
+
+        .content {
+            display: flex;
+            height: 300px; /* 고정 높이 설정 */
+            margin-bottom: 16px; /* 묶음 간 간격 */
+        }
+
+        .left {
+            flex: 7; /* 7:3 비율 적용 */
+            background-color: #eef;
+            margin-right: 8px;
+        }
+
+        .right {
+            flex: 3; /* 7:3 비율 적용 */
+            background-color: #fee;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 80px;
+            line-height: 80px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 네이버 로고 -->
+    <div class="container">
+        <h1>네이버</h1>
+    </div>
+
+    <!-- 상단 네비게이션 바 -->
+    <div class="container gnb-container">
+        <ul class="gnb">
+            <li>메일</li>
+            <li>카페</li>
+            <li>블로그</li>
+            <li>쇼핑</li>
+            <li>뉴스</li>
+            <li>증권</li>
+            <li>부동산</li>
+            <li>지도</li>
+        </ul>
+        <div class="rank">
+            실시간 검색어
+        </div>
+    </div>
+
+    <!-- 중앙 컨텐츠 -->
+    <div class="container content-group">
+        <!-- 첫 번째 묶음 -->
+        <div class="content">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <!-- 두 번째 묶음 -->
+        <div class="content">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+        © 2024 NAVER Corp.
+    </div>
+</body>
+</html>
