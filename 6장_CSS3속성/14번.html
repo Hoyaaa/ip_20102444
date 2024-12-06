@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Text Layout</title>
+    <style>
+        /* 컨테이너 스타일: 페이지 중앙에 배치하고 가로 크기를 50%로 제한 */
+        .container {
+            display: flex; /* Flexbox 레이아웃 사용 */
+            flex-direction: column; /* 항목을 세로로 배치 */
+            align-items: center; /* 항목을 가로 중앙 정렬 */
+            width: 50%; /* 컨테이너의 가로 폭을 50%로 설정 */
+            margin: 0 auto; /* 페이지 중앙에 배치 */
+        }
+
+        /* 각 아이템 스타일: 이미지와 텍스트를 포함한 개별 박스 */
+        .item {
+            display: flex; /* 이미지와 텍스트를 옆으로 나란히 배치 */
+            align-items: flex-start; /* 아이템의 상단을 맞춰 정렬 */
+            margin-bottom: 20px; /* 아이템 사이 간격 */
+            padding-bottom: 20px; /* 아이템 하단에 여백 추가 */
+            border-bottom: 1px solid #ccc; /* 하단에 구분선 추가 */
+        }
+
+        /* 이미지 스타일 */
+        .item img {
+            width: 150px; /* 이미지 너비를 150px로 설정 */
+            height: 150px; /* 이미지 높이를 150px로 설정 */
+            border-radius: 50%; /* 이미지를 원형으로 만듦 */
+            margin-right: 20px; /* 이미지와 텍스트 사이 간격 */
+        }
+
+        /* 텍스트 스타일 */
+        .text {
+            max-width: 400px; /* 텍스트 영역의 최대 폭을 400px로 제한 */
+        }
+    </style>
+</head>
+<body>
+
+<!-- 전체 컨텐츠를 담는 컨테이너 -->
+<div class="container">
+    <!-- 첫 번째 이미지와 텍스트 블록 -->
+    <div class="item">
+        <!-- 이미지 1: src 속성에 이미지 URL을 넣어 이미지 불러오기 -->
+        <img src="https://i.namu.wiki/i/d1A_wD4kuLHmOOFqJdVlOXVt1TWA9NfNt_HA0CS0Y_N0zayUAX8olMuv7odG2FiDLDQZIRBqbPQwBSArXfEJlQ.webp" alt="Image 1">
+        <!-- 텍스트 블록 1 -->
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sem ligula, volutpat in condimentum et, hendrerit sit amet nisi. Proin a metus dignissim, porta ipsum sed, porta mi. Pellentesque tempor vitae velit ut laoreet. Pellentesque tincidunt, dui nec suscipit ornare, elit turpis mattis velit, et rutrum justo lacus sed lorem. Vestibulum non ipsum varius, mattis lorem at, consequat mi. Suspendisse non vulputate nibh, ut pellentesque quam. Fusce vehicula vel lorem ut interdum. Nullam porttitor massa eget tincidunt tempor.</p>
+        </div>
+    </div>
+
+    <!-- 두 번째 이미지와 텍스트 블록 -->
+    <div class="item">
+        <!-- 이미지 2: src 속성에 이미지 URL을 넣어 이미지 불러오기 -->
+        <img src="https://flexible.img.hani.co.kr/flexible/normal/970/777/imgdb/resize/2019/0926/00501881_20190926.JPG" alt="Image 2">
+        <!-- 텍스트 블록 2 -->
+        <div class="text">
+            <p>Sed dignissim tortor id enim imperdiet, nec viverra sapien vehicula. Curabitur at euismod sapien. Vivamus at consequat sapien. Nulla non mi eget purus viverra finibus. Nunc sapien nunc, faucibus vitae dui accumsan, ultrices ultricies orci. Proin volutpat tempor lacus, vel finibus urna ultricies in. Aenean aliquet tristique ligula sed fermentum. In ut odio at leo convallis fermentum. Praesent vel volutpat erat, sed porttitor massa. Aliquam nec nibh purus.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
