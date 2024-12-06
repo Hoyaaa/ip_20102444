@@ -1,0 +1,36 @@
+<div>버튼</div> <!-- 버튼 역할을 하는 div 태그 -->
+
+<!-- jQuery 라이브러리 로드 -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    // jQuery를 사용해 div 요소에 hover 이벤트 추가
+    $('div').hover(
+        function () {
+            // 첫 번째 콜백 함수: 마우스가 div 위에 올라왔을 때 실행
+            $(this).css({
+                opacity: 0.5 // 투명도를 50%로 설정 (반투명)
+            });
+        },
+        function () {
+            // 두 번째 콜백 함수: 마우스가 div를 떠났을 때 실행
+            $(this).css({
+                opacity: 1 // 투명도를 100%로 설정 (불투명)
+            });
+        }
+    );
+</script>
+
+<style>
+    /* div 스타일 정의 */
+    div {
+        width: 100px; /* div의 가로 길이 */
+        height: 50px; /* div의 세로 길이 */
+        line-height: 50px; /* 텍스트를 수직 중앙 정렬 */
+        text-align: center; /* 텍스트를 수평 중앙 정렬 */
+        color: white; /* 텍스트 색상을 흰색으로 설정 */
+        background-color: teal; /* 배경색을 청록색으로 설정 */
+        border-radius: 20px; /* div의 모서리를 둥글게 설정 */
+        cursor: pointer; /* 마우스 커서를 포인터(손가락)로 변경 */
+    }
+</style>
