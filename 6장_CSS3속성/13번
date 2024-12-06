@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 페이지의 문자 인코딩을 UTF-8로 설정하여 한글을 포함한 다양한 문자를 정상적으로 표시 -->
+    <meta charset="UTF-8">
+    <!-- 페이지의 너비를 장치 너비에 맞추고 초기 확대 배율을 1로 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 페이지 제목을 "간단한 입력 양식"으로 설정 -->
+    <title>간단한 입력 양식</title>
+    <style>
+        /* 양식을 담을 컨테이너 스타일 */
+        .form-container {
+            width: 300px; /* 컨테이너의 너비를 300px로 설정 */
+            padding: 20px; /* 내부 여백을 20px로 설정 */
+            margin: auto; /* 페이지 중앙에 배치 */
+            background-color: #333; /* 배경색을 어두운 회색으로 설정 */
+            border-radius: 10px; /* 모서리를 둥글게 설정 */
+            color: white; /* 텍스트 색상을 흰색으로 설정 */
+            text-align: center; /* 텍스트를 가운데 정렬 */
+        }
+
+        /* 제목 스타일 */
+        .form-container h2 {
+            font-size: 1.5em; /* 글꼴 크기를 1.5배로 설정 */
+            margin-bottom: 20px; /* 아래쪽 여백을 20px로 설정 */
+        }
+
+        /* 레이블과 입력 필드를 가로로 정렬하기 위한 스타일 */
+        .form-group {
+            display: flex; /* 레이블과 입력 필드를 가로로 배치 */
+            align-items: center; /* 레이블과 입력 필드의 수직 정렬을 가운데로 설정 */
+            margin-bottom: 15px; /* 아래쪽 여백을 15px로 설정 */
+        }
+
+        /* 레이블 스타일 */
+        .form-group label {
+            width: 80px; /* 레이블의 고정 너비를 80px로 설정 */
+            text-align: left; /* 레이블을 왼쪽 정렬 */
+            margin-right: 10px; /* 레이블과 입력 필드 사이의 간격을 10px로 설정 */
+        }
+
+        /* 텍스트 입력 필드 스타일 */
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            flex: 1; /* 입력 필드가 남은 공간을 채우도록 설정 */
+            padding: 10px; /* 내부 여백을 10px로 설정 */
+            border: 2px solid #ddd; /* 테두리를 연한 회색으로 설정 */
+            border-radius: 20px; /* 모서리를 둥글게 설정 */
+            box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비를 계산 */
+        }
+
+        /* 제출 버튼을 입력 필드와 유사한 스타일로 설정 */
+        .submit-group {
+            display: flex; /* 가로 정렬을 유지하기 위해 flex 사용 */
+            justify-content: flex-end; /* 제출 버튼을 오른쪽에 정렬 */
+        }
+
+        /* 제출 버튼 스타일 */
+        .submit-group input[type="submit"] {
+            width: 70%; /* 제출 버튼 너비를 입력 필드의 70%로 설정 */
+            padding: 10px; /* 내부 여백을 10px로 설정 */
+            background-color: #ddd; /* 배경색을 연한 회색으로 설정 */
+            border: none; /* 버튼 테두리 제거 */
+            border-radius: 20px; /* 모서리를 둥글게 설정 */
+            cursor: pointer; /* 마우스를 올리면 커서가 손 모양으로 변경 */
+            font-size: 1em; /* 글꼴 크기를 기본값으로 설정 */
+            box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비를 계산 */
+        }
+
+        /* 제출 버튼에 마우스를 올렸을 때 스타일 */
+        .submit-group input[type="submit"]:hover {
+            background-color: #ccc; /* 배경색을 더 밝은 회색으로 변경 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <!-- 제목 표시 -->
+    <h2>간단한 입력 양식</h2>
+    <form action="#">
+        <!-- 아이디 입력 필드를 위한 레이블과 텍스트 박스 -->
+        <div class="form-group">
+            <label for="username">아이디</label> <!-- 아이디 레이블 -->
+            <input type="text" id="username" name="username" required> <!-- 아이디 입력 필드 -->
+        </div>
+        <!-- 비밀번호 입력 필드를 위한 레이블과 텍스트 박스 -->
+        <div class="form-group">
+            <label for="password">비밀번호</label> <!-- 비밀번호 레이블 -->
+            <input type="password" id="password" name="password" required> <!-- 비밀번호 입력 필드 -->
+        </div>
+        <!-- 제출 버튼을 위한 그룹 -->
+        <div class="submit-group">
+            <input type="submit" value="제출"> <!-- 제출 버튼 -->
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
